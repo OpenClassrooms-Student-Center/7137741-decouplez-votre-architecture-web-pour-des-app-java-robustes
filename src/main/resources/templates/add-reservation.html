@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Add Reservation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/shards.min.css">
+    </head>
+    <body>
+    <a href="/index">
+	<img th:src="@{/images/AirBusinessLogo.jpg}" height="64" width="64"/>
+	</a>
+        <div class="container my-5">
+            <h2 class="mb-5">New Reservation</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/reservation/add}" th:object="${reservation}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name" class="col-form-label">Name</label>
+                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name">
+                                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="destination" class="col-form-label">Destination</label>
+                                <input type="text" th:field="*{destination}" class="form-control" id="destination" placeholder="Destination">
+                                <span th:if="${#fields.hasErrors('destination')}" th:errors="*{destination}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="departureDate" class="col-form-label">Departure Date</label>
+                                <input type="date" th:field="*{departureDate}" class="form-control" id="departureDate" placeholder="MM/DD/YYYY">
+                                <span th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="returnDate" class="col-form-label">Return Date</label>
+                                <input type="date" th:field="*{returnDate}" class="form-control" id="returnDate" placeholder="MM/DD/YYYY">
+                                <span th:if="${#fields.hasErrors('returnDate')}" th:errors="*{returnDate}" class="text-danger"></span>
+                            </div>                      
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-primary" value="Add Reservation">
+                            </div>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
