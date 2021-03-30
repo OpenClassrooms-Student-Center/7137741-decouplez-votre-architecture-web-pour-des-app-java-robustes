@@ -10,6 +10,6 @@ import com.airbusiness.airbusinessmvc.entities.Client;
 
 @Repository
 public interface ClientRepository extends CrudRepository<Client, Long>  {
-	@Query("SELECT c FROM Client c WHERE c.outstandingBalance > 0.0")
+	@Query("SELECT c FROM Client c WHERE c.outstandingBalance > ?1")
 	List<Client> findByOustandingBalanceGreaterThan(double value);
 }
