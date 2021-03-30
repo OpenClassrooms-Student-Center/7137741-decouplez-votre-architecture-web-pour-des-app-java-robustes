@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotBlank(message = "Name of Reservation is mandatory")

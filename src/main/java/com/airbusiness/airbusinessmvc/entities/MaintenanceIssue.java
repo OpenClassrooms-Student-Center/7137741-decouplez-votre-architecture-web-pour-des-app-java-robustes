@@ -45,7 +45,7 @@ public class MaintenanceIssue {
 	}
 	
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotBlank(message = "Entry Date is mandatory")

@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotBlank(message = "First Name is mandatory")

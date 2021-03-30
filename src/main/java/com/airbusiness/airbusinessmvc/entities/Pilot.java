@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Pilot {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     public void setId(long id) {
         this.id = id;
